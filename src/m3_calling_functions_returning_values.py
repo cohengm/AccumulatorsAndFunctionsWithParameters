@@ -7,8 +7,8 @@ This module demonstrates and practices:
   -- UNIT TESTING.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Geoffrey Cohen.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m3t_tester
 
@@ -37,7 +37,7 @@ def main():
 def run_test_sum_of_digits():
     """ Tests the  sum_of_digits   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function, as follows:
+    # DONE: 2. Implement this TEST function, as follows:
     #
     #  Step 1:  This TEST function tests the  sum_of_digits  function.
     #    So read the doc-string of the  sum_of_digits  function
@@ -71,6 +71,19 @@ def run_test_sum_of_digits():
     # TO DO: 2 (continued).
     # Below this comment, add 3 more test cases of your own choosing.
     # ------------------------------------------------------------------
+
+    expected = 6
+    answer = sum_of_digits(123)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    expected = 15
+    answer = sum_of_digits(456)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    answer = sum_of_digits(789)
+    print(answer)
 
 
 def sum_of_digits(number):
@@ -134,8 +147,17 @@ def run_test_digits_in_cube():
     print('Testing the   digits_in_cube   function:')
     print('-----------------------------------------------------')
 
+    answer = digits_in_cube(5)
+    print(answer)
+
 
 def digits_in_cube(n):
+
+    g=n*n*n
+    k=sum_of_digits(g)
+    return k
+
+
     """
     What comes in:  A positive integer.
     What goes out:  The sum of the digits in the CUBE of the integer.
@@ -170,8 +192,16 @@ def run_test_digits_in_power():
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
 
+    print(digits_in_power(5,3))
+
+    print(digits_in_power(2,2))
+
 
 def digits_in_power(n, k):
+
+    sum = n**k
+    final = sum_of_digits(sum)
+    return final
     """
     What comes in:  Two positive integers, n and k.
     What goes out:
@@ -215,8 +245,16 @@ def run_test_fancy_sums_of_digits():
     # in the doc-string to be sure that you understand the specification.
     # ------------------------------------------------------------------
 
+    print(fancy_sums_of_digits(2))
 
 def fancy_sums_of_digits(n):
+
+    x = n**1000
+    y = n*999
+    k = x**y
+    g = sum_of_digits(k)
+    return g
+
     """
     What comes in:  A positive integer n.
     What goes out:
